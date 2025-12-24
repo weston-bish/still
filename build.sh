@@ -44,8 +44,15 @@ done
 # Sort posts by date descending
 HOMEPAGE_CONTENT=$(sort -r "$HOMEPAGE_LIST")
 
+# Optional: include index.html in content/ to get a block on homepage for welcome text.
+INTRO_HTML=""
+if [ -f content/index.md ]; then
+	INTRO_HTML="$(cmark "content/index.md")"
+fi
+
 # Generate index.html
 cat "$HEADER" > "$PUBLIC_DIR/index.html"
+echo "$INTRO_HTML</main><main>" >> "$PUBLIC_DIR/index.html" # jank
 echo "<h1>Blog</h1><ul>$HOMEPAGE_CONTENT</ul>" >> "$PUBLIC_DIR/index.html"
 cat "$FOOTER" >> "$PUBLIC_DIR/index.html"
 
@@ -58,7 +65,7 @@ for FILE in "$CONTENT_DIR"/*.md; do
     BASENAME=$(basename "$FILE" .md)
     # Skip posts
     [ "$BASENAME" == "posts" ] && continue
-    # Skip index.md if you want to use generated index.html
+    # Skip index.md
     [ "$BASENAME" == "index" ] && continue
 
     OUTFILE="$PUBLIC_DIR/$BASENAME.html"
