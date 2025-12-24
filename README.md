@@ -92,8 +92,6 @@ You should be able to open any file and immediately understand what it does. If 
 
 - subdirectories
 
-- index page generation
-
 ## License
 MIT
 
