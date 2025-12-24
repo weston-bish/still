@@ -46,7 +46,7 @@ HOMEPAGE_CONTENT=$(sort -r "$HOMEPAGE_LIST")
 
 # Generate index.html
 cat "$HEADER" > "$PUBLIC_DIR/index.html"
-echo "<main><h1>Blog</h1><ul>$HOMEPAGE_CONTENT</ul></main>" >> "$PUBLIC_DIR/index.html"
+echo "<h1>Blog</h1><ul>$HOMEPAGE_CONTENT</ul>" >> "$PUBLIC_DIR/index.html"
 cat "$FOOTER" >> "$PUBLIC_DIR/index.html"
 
 rm "$HOMEPAGE_LIST"
