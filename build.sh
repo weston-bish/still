@@ -14,14 +14,14 @@ mkdir -p "$PUBLIC_DIR"
 
 # Copy static assets
 rm -rf "$PUBLIC_DIR/img"
-cp -r "$IMG_DIR" "$PUBLIC_DIR/"
 
 if [ -f content/index.md ]; then
 	cp -r "$IMG_DIR" "$PUBLIC_DIR/"
 fi
 
-
-cp "$INCLUDE_DIR/style.css" "$PUBLIC_DIR/"
+if [ -f content/index.md ]; then
+	cp "$INCLUDE_DIR/style.css" "$PUBLIC_DIR/"
+fi
 
 # Temporary file for homepage post list
 HOMEPAGE_LIST=$(mktemp)
