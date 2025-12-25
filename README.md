@@ -21,6 +21,7 @@ The goal of still is to make it **as easy as possible to publish a blog** — no
 
 ## Project Structure
 
+```
 .
 ├── build.sh
 ├── content
@@ -32,6 +33,7 @@ The goal of still is to make it **as easy as possible to publish a blog** — no
     ├── header.html
     ├── img
     └── style.css
+```
 
 ---
 
@@ -47,9 +49,8 @@ date: 2025-01-01
 
 Post content starts here...
 ```
-- title — used as the post title + homepage link text
-- date — used for sorting + display
-- Dates should be in YYYY-MM-DD format.
+- `title` — used as the post title + homepage link text
+- `date` — used for sorting + display. Should be in `YYYY-MM-DD` format.
 
 ---
 
@@ -63,33 +64,15 @@ The generated HTML files will appear in:
 
 ---
 
-## Requirements
-- bash
-
-- cmark
-
-- cat, sed
-
-- a POSIX-like environment (Linux, macOS, BSD, etc.)
-
----
-
 ## Roadmap / Ideas
 
 - NEXT convert sed to awk
-
 - refactor build file
-
 - research important things that are missing
-
 - option disable posts
-
 - option RSS feed
-
 - post list pagination
-
 - detect changes and build automatically
-
 - subdirectories
 
 ## License
