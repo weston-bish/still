@@ -63,12 +63,6 @@ Build the site:
 The generated HTML files will appear in:
 `public/`
 
-## Philosophy
-
-blengine is intentionally boring, predictable, transparent.
-
-You should be able to open any file and immediately understand what it does. If a feature adds complexity, it doesn’t belong here.
-
 ## Requirements
 - bash
 
