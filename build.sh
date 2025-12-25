@@ -15,6 +15,12 @@ mkdir -p "$PUBLIC_DIR"
 # Copy static assets
 rm -rf "$PUBLIC_DIR/img"
 cp -r "$IMG_DIR" "$PUBLIC_DIR/"
+
+if [ -f content/index.md ]; then
+	cp -r "$IMG_DIR" "$PUBLIC_DIR/"
+fi
+
+
 cp "$INCLUDE_DIR/style.css" "$PUBLIC_DIR/"
 
 # Temporary file for homepage post list
@@ -22,7 +28,7 @@ HOMEPAGE_LIST=$(mktemp)
 
 echo "Building posts..."
 for FILE in "$POSTS_DIR"/*.md; do
-    [ -e "$FILE" ] || continue
+	[ -e "$FILE" ] || continue
 
     # Extract metadata from top comment block
     TITLE=$(sed -n 's/^title:[[:space:]]*//p' "$FILE")
@@ -61,16 +67,16 @@ rm -f /tmp/post_body.html
 
 echo "Building other pages..."
 for FILE in "$CONTENT_DIR"/*.md; do
-    [ -e "$FILE" ] || continue
-    BASENAME=$(basename "$FILE" .md)
-    # Skip posts
-    [ "$BASENAME" == "posts" ] && continue
-    # Skip index.md
-    [ "$BASENAME" == "index" ] && continue
+	[ -e "$FILE" ] || continue
+	BASENAME=$(basename "$FILE" .md)
+	# Skip posts
+	[ "$BASENAME" == "posts" ] && continue
+	# Skip index.md
+	[ "$BASENAME" == "index" ] && continue
 
-    OUTFILE="$PUBLIC_DIR/$BASENAME.html"
-    cmark "$FILE" > /tmp/page_body.html
-    cat "$HEADER" /tmp/page_body.html "$FOOTER" > "$OUTFILE"
+	OUTFILE="$PUBLIC_DIR/$BASENAME.html"
+	cmark "$FILE" > /tmp/page_body.html
+	cat "$HEADER" /tmp/page_body.html "$FOOTER" > "$OUTFILE"
 done
 rm -f /tmp/page_body.html
 

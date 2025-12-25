@@ -3,7 +3,7 @@
 **still** is a super-minimal static site generator designed for small personal blogs.  
 It converts Markdown files into simple HTML pages using `cmark` and combines them with a header and footer to produce fast, portable, brutally minimal websites.
 
-The goal of still is to make it **as easy as possible to publish a blog** — no frameworks, no JS pipelines, just Unix tools.
+The goal of still is to make it **as simple as possible to publish a blog**.
 
 ---
 
@@ -74,6 +74,7 @@ The generated HTML files will appear in:
 - post list pagination
 - detect changes and build automatically
 - subdirectories
+- url slugs
 
 ## License
 MIT
