@@ -1,9 +1,9 @@
-# blengine
+# still
 
-**blengine** is a super-minimal static site generator designed for small personal blogs.  
+**still** is a super-minimal static site generator designed for small personal blogs.  
 It converts Markdown files into simple HTML pages using `cmark` and combines them with a header and footer to produce fast, portable, brutally minimal websites.
 
-The goal of blengine is to make it **as easy as possible to publish a blog** — no frameworks, no JS pipelines, just Unix tools.
+The goal of still is to make it **as easy as possible to publish a blog** — no frameworks, no JS pipelines, just Unix tools.
 
 ---
 
@@ -20,24 +20,20 @@ The goal of blengine is to make it **as easy as possible to publish a blog** —
 ---
 
 ## Project Structure
+
 .
 ├── build.sh
 ├── content
+│   ├── index.md
 │   └── posts
 │       └── test.md
-├── include
-│   ├── footer.html
-│   ├── header.html
-│   ├── img
-│   │   └── cat.png
-│   └── style.css
-├── public
-│   ├── img
-│   │   └── cat.png
-│   ├── index.html
-│   ├── style.css
-│   └── test.html
-└── README.md
+└── include
+    ├── footer.html
+    ├── header.html
+    ├── img
+    └── style.css
+
+---
 
 ## Post Metadata Format
 
@@ -55,6 +51,8 @@ Post content starts here...
 - date — used for sorting + display
 - Dates should be in YYYY-MM-DD format.
 
+---
+
 ## Usage
 
 Build the site:
@@ -63,32 +61,36 @@ Build the site:
 The generated HTML files will appear in:
 `public/`
 
+---
+
 ## Requirements
 - bash
 
 - cmark
 
-- cat, sed / awk
+- cat, sed
 
 - a POSIX-like environment (Linux, macOS, BSD, etc.)
 
+---
+
 ## Roadmap / Ideas
 
-- optional RSS feed
+- NEXT convert sed to awk
 
-- nicer index layout helpers
+- refactor build file
 
-- draft posts mode
+- research important things that are missing
 
-- per-post slugs
+- option disable posts
 
-- pages for posts
+- option RSS feed
+
+- post list pagination
+
+- detect changes and build automatically
 
 - subdirectories
 
 ## License
 MIT
-
-## Why the name?
-
-Because it’s a blog engine, silly.

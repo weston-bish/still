@@ -1,11 +1,11 @@
 <!--
-title: My First Post
-date: 2025-12-24
+title: Example Blog Post
+date: 2025-12-25
 -->
 
-# Hello World
+# Example Blog Post
 
-This is my blog.
+This is an example blog post.
 
 Here is a [link](https://kernel.org).
 
